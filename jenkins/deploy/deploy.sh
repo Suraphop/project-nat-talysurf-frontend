@@ -10,5 +10,5 @@ sshpass -p $PRODUCTION_SERVER_PASSWORD ssh -o StrictHostKeyChecking=no productio
     docker login -u devopsmic -p $DOCKER_PASSWORD
     docker stop $IMAGE || true && docker rm $IMAGE || true
     docker pull devopsmic/$IMAGE:$BUILD_TAG
-    docker run --restart=always -d --publish 10000:80 --name $IMAGE devopsmic/$IMAGE:$BUILD_TAG 
+    docker run --restart=always -d --publish 10001:80 --name $IMAGE devopsmic/$IMAGE:$BUILD_TAG 
 ENDSSH
